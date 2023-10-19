@@ -8,7 +8,7 @@ final tvs = List.generate(
     _names.length,
     (index) => TvModel(
         name: _names[index],
-        image: 'Assets/coffee/${index + 1}.png',
+        image: 'Assets/tvs/${index + 1}.png',
         price: _prices[index]));
 
 class TvModel {
