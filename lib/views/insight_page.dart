@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tv_stack/model/tv_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InsightPage extends StatelessWidget {
-  const InsightPage({Key? key, required this.tvModel}) : super(key: key);
+   InsightPage({Key? key, required this.tvModel}) : super(key: key);
+  NumberFormat myFormat = NumberFormat.decimalPattern('en_us');
 
   final TvModel tvModel;
   @override
@@ -56,7 +58,7 @@ class InsightPage extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      '₹${tvModel.price.toStringAsFixed(2)}',
+                      '₹${myFormat.format(tvModel.price.toStringAsFixed(2))}',
                       style: GoogleFonts.getFont('Inter',
                           fontSize: 50,
                           fontWeight: FontWeight.w700,

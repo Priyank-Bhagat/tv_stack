@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tv_stack/model/tv_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tv_stack/views/insight_page.dart';
@@ -14,6 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  NumberFormat myFormat = NumberFormat.decimalPattern('en_us');
+
   final _pageController =
       PageController(viewportFraction: 0.35, initialPage: _initialPage.toInt());
   final _pageTextController = PageController(initialPage: _initialPage.toInt());
@@ -177,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                         key: Key(tvs[_currentPage.toInt()].name),
                         duration: duration,
                         child: Text(
-                          '₹${tvs[_currentPage.toInt()].price.toStringAsFixed(2)}',
+                          '₹${myFormat.format(tvs[_currentPage.toInt()].price)}',
                           style: GoogleFonts.getFont('Inter',
                               fontSize: 20, fontWeight: FontWeight.w500),
                         ))
