@@ -63,23 +63,27 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           Positioned(
-              left: 22,
-              right: 20,
-              bottom: -size.height * 0.3,
-              top: size.height * 0.3,
-              child: const DecoratedBox(
-                decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
+            left: 22,
+            right: 20,
+            bottom: -size.height * 0.3,
+            top: size.height * 0.3,
+            child: const DecoratedBox(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
                   BoxShadow(
-                      color: Colors.brown, blurRadius: 90, spreadRadius: 45)
-                ]),
-              )),
+                      color: Colors.teal, blurRadius: 90, spreadRadius: 45)
+                ],
+              ),
+            ),
+          ),
           Transform.scale(
             scale: 1.6,
             alignment: Alignment.bottomCenter,
             child: PageView.builder(
               scrollDirection: Axis.vertical,
               controller: _pageController,
-              itemCount: tvs.length + 1,
+              itemCount: names.length,
               onPageChanged: (value) {
                 if (value < tvs.length) {
                   _pageTextController.animateToPage(value,
@@ -87,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 }
               },
               itemBuilder: (context, index) {
-                if (index == 0) return SizedBox.shrink();
+                if (index == 0) return const SizedBox.shrink();
 
                 final tVs = tvs[index - 1];
                 final result = _currentPage - index + 1;
@@ -99,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       PageRouteBuilder(
-                        transitionDuration: Duration(milliseconds: 650),
+                        transitionDuration: const Duration(milliseconds: 650),
                         pageBuilder: (_, animation, __) => FadeTransition(
                           opacity: animation,
                           child: InsightPage(
@@ -110,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 20.0),
+                    padding: const EdgeInsets.only(bottom: 20.0),
                     child: Transform(
                         alignment: Alignment.bottomCenter,
                         transform: Matrix4.identity()
@@ -149,9 +153,9 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                         child: PageView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       controller: _pageTextController,
-                      itemCount: tvs.length,
+                      itemCount: names.length,
                       itemBuilder: (context, index) {
                         final opacity =
                             (1 - (index - _textPage).abs()).clamp(0.0, 1.0);
@@ -182,7 +186,9 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           '₹${myFormat.format(tvs[_currentPage.toInt()].price)}',
                           style: GoogleFonts.getFont('Inter',
-                              fontSize: 20, fontWeight: FontWeight.w500),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.green),
                         ))
                   ],
                 ),

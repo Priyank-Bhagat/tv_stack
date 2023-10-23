@@ -33,6 +33,8 @@ final _names = [
   'TCL 6-Series Roku TV',
 ];
 
+get names => _names;
+
 final _prices = [
   149990.00,
   818999.00,

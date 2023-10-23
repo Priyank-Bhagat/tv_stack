@@ -4,7 +4,7 @@ import 'package:tv_stack/model/tv_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InsightPage extends StatelessWidget {
-   InsightPage({Key? key, required this.tvModel}) : super(key: key);
+  InsightPage({Key? key, required this.tvModel}) : super(key: key);
   NumberFormat myFormat = NumberFormat.decimalPattern('en_us');
 
   final TvModel tvModel;
@@ -34,7 +34,7 @@ class InsightPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           SizedBox(
             height: device.height * 0.4,
             child: Stack(
@@ -49,7 +49,7 @@ class InsightPage extends StatelessWidget {
                   left: device.width * 0.05,
                   bottom: 0,
                   child: TweenAnimationBuilder<double>(
-                    duration: Duration(milliseconds: 610),
+                    duration: const Duration(milliseconds: 610),
                     tween: Tween(begin: 1.0, end: 0.0),
                     builder: (context, value, child) {
                       return Transform.translate(
@@ -58,13 +58,13 @@ class InsightPage extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      '₹${myFormat.format(tvModel.price.toStringAsFixed(2))}',
+                      '₹${myFormat.format(tvModel.price)}',
                       style: GoogleFonts.getFont('Inter',
                           fontSize: 50,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Colors.green,
                           shadows: [
-                            BoxShadow(
+                            const BoxShadow(
                                 color: Colors.black45,
                                 blurRadius: 10,
                                 spreadRadius: 20)
