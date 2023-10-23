@@ -76,14 +76,16 @@ class InsightPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: device.width * 0.04),
-            child: Text(
-              'Quisque porttitor, odio non varius blandit, lorem purus lacinia justo, eget rutrum sem nulla sit amet tortor. Maecenas ut odio imperdiet, eleifend ligula euismod, mollis neque. Proin elementum, velit ac fringilla ornare, ante velit imperdiet erat, placerat eleifend tellus sem eu dui. Aliquam erat volutpat. Donec non blandit massa.',
-              style: GoogleFonts.getFont(
-                'Inter',
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: device.width * 0.04),
+              child: Text(
+                'Quisque porttitor, odio non varius blandit, lorem purus lacinia justo, eget rutrum sem nulla sit amet tortor. Maecenas ut odio imperdiet, eleifend ligula euismod, mollis neque. Proin elementum, velit ac fringilla ornare, ante velit imperdiet erat, placerat eleifend tellus sem eu dui. Aliquam erat volutpat. Donec non blandit massa.',
+                style: GoogleFonts.getFont(
+                  'Inter',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           )
