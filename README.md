@@ -15,7 +15,7 @@ The app has a very simple UI, where you just scroll and you can see 📜 New TV 
 </p>
 
 ## Download
-👉[Download ](https://mega.nz/file/2EhmUILa#vg7wM7rz3tbSc8MwgHqmXmmKA-sjg08wo1Xo1USkmHk)👈 The tv_stack App.
+👉[Download ](https://drive.google.com/file/d/1FXPjjxVmZjVTPgF3wMCyHGc9_GXiIZok/view?usp=sharing)👈 The tv_stack App.
 
 ## Getting Started
 
